@@ -1165,9 +1165,9 @@ function App() {
                       </span>
                       <button
                         className="drawer-load-full-btn"
-                        onClick={() => goToSegment(drawerSegment)}
+                        onClick={() => loadFullList(1)}
                       >
-                        🔗 View in Segments ({drawerTotal})
+                        📂 View Entire List ({drawerTotal})
                       </button>
                     </div>
                   )}
