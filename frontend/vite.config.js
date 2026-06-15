@@ -7,8 +7,10 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   build: {
-    // Output directly into the Django project's static_frontend folder
-    outDir: path.resolve(__dirname, '../../../xeno-CRM/xeno-crm/static_frontend'),
+    // Output directly into the Django project's static_frontend folder (or 'dist' if on Vercel)
+    outDir: process.env.VERCEL === '1'
+      ? 'dist'
+      : path.resolve(__dirname, '../../../xeno-CRM/xeno-crm/static_frontend'),
     emptyOutDir: true,
     sourcemap: false,
     rollupOptions: {
